@@ -1,0 +1,54 @@
+{% extends 'mc_base.html' %}
+{% block title %} Live Website {% endblock %}
+{% block content %}
+<div class="max-w-screen-xl mx-auto px-10 md:px-20 ">
+<div class="w-full  md:min-h-screen  py-10 flex justify-between items-center">
+<div class="w-1/5 h-full hidden md:block  "></div>
+<div class="w-full md:w-4/5  md:min-h-9/10 mx-auto flex-row  text-center ">
+<div class="main-hero  md:min-h-screen  pt-10 ">
+			
+	<div class="live">
+		<div class="pt-6 md:pt-0  text-4xl font-bold text-gray-400 ">
+			Live
+			<hr class="mt-3">
+		</div>
+		 
+		<div class="">
+			<div class=" rounded-xl ">
+			
+			{% for n in lw %}
+			{% if n.type == "Live"  %}
+		
+			<div class="  rounded-lg shadow-bw p-5 my-10 lg:flex justify-around {% if forloop.counter|divisibleby:2 %}lg:flex-row{% else %}flex-row-reverse{% endif %}">
+				<div class=" w-full p-3 rounded flex justify-center items-center">
+					<img class="rounded" src="{{n.image.url}}">
+				</div>
+				<div class="  w-full p-3 rounded text-gray-400 ">
+					<div class=" h-full w-full grid grid-cols-1 gap-4 content-normal  text-start">
+						<div class="">
+							<h1 class="border-b border-gray-400">Description</h1>
+							<p>{{n.description }} </p>
+						</div>
+						<div class="">
+							
+							{{ n.technology }}
+						</div>
+						<div class="">
+							<a href="{{n.link}}" class=" hover:text-cr shadow-bw p-2 px-10 rounded-full" target="_blank">Preview</a>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+			{% endfor %}
+
+			</div>
+		</div>
+		
+	</div>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}
