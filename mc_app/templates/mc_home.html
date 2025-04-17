@@ -1,0 +1,271 @@
+{% extends 'mc_base.html' %}
+{% block title %} Home Page{% endblock %}
+{% block content %}
+<div class="max-w-screen-xl mx-auto px-10 md:px-20 ">
+<div class="w-full  md:min-h-screen  flex justify-between items-center">
+<div class="w-1/5 h-full hidden lg:block  "></div>
+<div class="w-full md:w-4/5 md:min-h-9/10 mx-auto flex-row  text-center ">
+
+
+<div class="home section main_hero mt-20 md:mt-0  md:min-h-screen  flex justify-center items-center" id="home">
+	<div class="">
+		<div class="" data-aos="fade-down" data-aos-duration="2000">
+			<h1 class="text-4xl md:text-7xl  font-bold ">Full-Stack <br>Web <span class="text-cy">Developer !!!</span></h1>
+		</div>
+		<div class="py-10 overflow-hidden" >
+			<p class="text-md md:text-xl font-semibold " data-aos="fade-up"  data-aos-anchor-placement="top-center" data-aos-duration="2000">Hi, I'm <span class="text-cr">Madhab Chandra</span>. <br>A passionate Full-Stack Web Developer by Python and Django.</p>
+		</div>
+		<div class=" flex justify-center gap-3 md:gap-8 py-3 md:py-5 text-gray-400"  data-aos="zoom-out" data-aos-duration="3000">
+			<div class="h-12 w-12 shadow-bw rounded-full p-2 flex justify-center items-center">
+				<i class="fa-brands fa-python text-xl"></i>
+			</div>
+			<div class="h-12 w-12 shadow-bw rounded-full p-2 flex justify-center items-center">
+				<span class=" text-xl font-bold">dj</span>
+			</div>
+			<div class="h-12 w-12 shadow-bw rounded-full p-2 flex justify-center items-center">
+				<i class="fa-solid fa-database text-md"></i>
+			</div>
+			<div class="h-12 w-12 shadow-bw rounded-full p-2 flex justify-center items-center">
+				<i class="fa-brands fa-js text-md"></i>
+			</div>
+			<div class="h-12 w-12 shadow-bw rounded-full p-2 flex justify-center items-center">
+				<i class="fa-brands fa-html5 text-md"></i>
+			</div>
+			<div class="h-12 w-12 shadow-bw rounded-full p-2 flex justify-center items-center">
+				<i class="fa-brands fa-figma text-md"></i>
+			</div>
+		</div>
+		
+		<div class=" flex flex-col md:flex-row justify-center items-center gap-10  mt-10 py-5 md:mt-10 md:py-10 mx-auto overflow-hidden">
+			<div class=" w-56 shadow-bw p-3 flex justify-center items-center text-cg hover:text-cr rounded-xl" data-aos="fade-right" data-aos-duration="1500">
+				<a class="" href="https://www.upwork.com/freelancers/~01105a047f2bc4442e" target="_blank" ><i class="fa-solid fa-user-tie text-sm px-3"></i> Hire Me</a>
+			</div>
+			
+			<div class=" w-56 shadow-bw p-3 flex justify-center items-center text-cg hover:text-cy rounded-xl" data-aos="fade-left" data-aos-duration="1500">
+				<a href="https://www.linkedin.com/in/madhab-chandro-392a341a6/" target="_blank">My CV <i class="fa-solid fa-file-arrow-down px-3"></i></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<div class="project section mt-10 shadow-bw px-10 p-5 pb-5 text-gray-400 overflow-hidden my:10 md:my-20" id="project" data-aos="fade-up" data-aos-duration="1000">
+	<div class="md:py-6 md:pt-0 md:pb-10 text-xl md:text-2xl font-bold text-gray-400 ">
+		Projects
+		<hr class="mt-5">
+	</div>
+	<div class=" p-1 responsive1 flex w-full" style="z-index:1">
+		{% for wl in weblist %}
+		
+		<div class="p-4 slide-item xl:h-96 ">
+			<div class="flex justify-center  h-full ">
+				<div class=" shadow-bw  rounded-2xl overflow-hidden p-3 h-full ">
+				   <div class=" rounded-t-xl shadow-bw-inset">
+				   		<img class="rounded-t-xl " src="{{wl.image}}">
+				   </div>
+				    <div class="p-4">
+				        <h2 class="text-lg font-semibold text-gray-400">{{wl.title}}</h2>
+				        <p class="text-gray-500 text-sm mt-1">High-quality and stylish product for everyday use.</p>
+				        <div class="flex justify-center items-center mt-4">
+				            <a href="{{wl.link}}" class="w-full" target="_blank">
+					            <button class=" w-full text-gray-400 px-4 py-2 font-bold shadow-[0px_0px_30px_rgba(0,0,0,0.3)]  rounded-full hover:shadow-[0px_0px_30px_rgba(0,0,0,0.5)] hover:text-gray-200 transition">
+					                View
+					            </button>
+				            </a>
+				        </div>
+				    </div>
+				</div>
+			</div>
+		</div>
+		
+		{% endfor %}
+
+	</div>
+</div>
+
+{% if graphic %}
+<div class="project section shadow-bw p-5 px-8 my-10 md:my-10 text-gray-400" id="project" data-aos="fade-up" data-aos-duration="1000">
+	<div class="md:py-6 md:pt-0 md:pb-10 text-xl md:text-2xl font-bold text-gray-400 ">
+		Logo Designs
+		<hr class="mt-5">
+	</div>
+
+	<div class=" p-1 responsive flex w-full justify-center">
+		{% for gd in graphic %}
+		<div class="p-4 slide-item">
+			<div class="flex justify-center items-center">
+				<div class=" shadow-bw p-2 rounded-2xl">
+					<div class="w-56 h-36 rounded-xl  overflow-hidden bg_img" style="background-size: cover; background-position: center;  background-image: url('{{gd.image}}');">
+					    <div class="slide-item1 h-full w-full justify-center flex items-center hover:bg-cb hover:bg-opacity-50 transition duration-500">
+					    	<button  class="view_button image_button  bg-cb bg-opacity-50 hover:bg-opacity-100 px-3 py-1 rounded-full hidden transition duration-500"> <i class="fa-solid fa-eye text-sm"></i> View</button>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+		
+	</div>
+</div>
+{% endif %}
+<div class="about section mb-20 shadow-bw pb-5 my-10 md:my-20 " id="about" data-aos="fade-up" data-aos-duration="1000">
+	<div class="pt-6 text-xl md:text-2xl font-bold text-gray-400 px-6 ">
+		About Me
+		<hr class="mt-5">
+	</div>
+	
+	<div class="text-start px-3 md:px-10 mt-5">
+		Hello, My name is <span class="text-cr">Madhab Chandra</span>. I am a full stack web developer with more than 5 years of experience.
+		I have good knowledge in following technologies.<br><br>
+		Python, Django, Flutter, JavaScript, jQuery, Bootstrap5, Tailwind CSS, HTML5, CSS3, Figma, Adobe Photoshop and Adobe Illustrator.<br><br>
+		I am very friendly and detail oriented developer. I am always enthusiastic about learning new technologies and making a website more user-friendly. I have developed multiple websites and applications for all foreign clients. Highly organized and dedicated, with a positive attitude. Hardworking and committed to work.
+	</div>
+</div>
+
+
+<div class="about section mb-20 shadow-bw py-5 my-10 md:my-20" id="skill" data-aos="fade-up" data-aos-duration="1000">
+	<div class="md:pt-6 md:pt-0  text-xl md:text-2xl font-bold text-gray-400 px-6">
+		Skill Proficiency
+		<hr class="mt-5 ">
+	</div>
+<div class=" px-6 ">
+  <h2 class="text-2xl font-bold text-center mb-6"></h2>
+
+  <div class="">
+
+    <div class="flex  gap-4">
+		<div class="grid  gap-4 text-sm text-gray-400 w-[15%] text-start">
+			<div class="h-6 flex items-center">Python</div>
+			<div class="h-6 ">Django</div>
+			<div class="h-6 ">Flet</div>
+			<div class="h-6 ">jQuery</div>
+			<div class="h-6 ">CSS</div>
+			<div class="h-6 ">Tailwind</div>
+			<div class="h-6 ">JavaScript</div>
+			<div class="h-6 ">HTML</div>
+		</div>
+		<div class="border-l border-b w-[85%] grid gap-4">
+			<div class=" h-6 flex items-center">
+				<div class="python w-[0%] h-[1px] bg-gray-400 rounded-r transition-all duration-3000"></div>
+			</div>
+			
+			<div class=" h-6 flex items-center">
+				<div class="django w-[0%] h-[1px] bg-gray-400 rounded-r transition-all duration-3000"></div>
+			</div>
+			
+			<div class=" h-6 flex items-center">
+				<div class="flet w-[0%] h-[1px] bg-gray-400 rounded-r transition-all duration-3000"></div>
+			</div>
+			
+			<div class=" h-6 flex items-center">
+				<div class="jquery w-[0%] h-[1px] bg-gray-400 rounded-r transition-all duration-3000"></div>
+			</div>
+
+			<div class=" h-6 flex items-center">
+				<div class="css w-[0%] h-[1px] bg-gray-400 rounded-r transition-all duration-3000"></div>
+			</div>
+
+			<div class=" h-6 flex items-center">
+				<div class="tailwind w-[0%] h-[1px] bg-gray-400 rounded-r transition-all duration-3000"></div>
+			</div>
+
+			<div class=" h-6 flex items-center">
+				<div class="javascript w-[0%] h-[1px] bg-gray-400 rounded-r transition-all duration-3000"></div>
+			</div>
+			
+			<div class=" h-6 flex items-center">
+				<div class="html w-[0%] h-[1px] bg-gray-400 rounded-r transition-all duration-3000"></div>
+			</div>		
+			
+		
+		</div>
+	 </div>     
+	<div class="flex gap-4 mt-3">
+		<div class="w-[15%]"></div>
+		<div class=" w-[85%] flex gap-4 mt-2 text-xs justify-between  text-gray-400">
+			<span>0%</span>
+			<span>25%</span>
+			<span>50%</span>
+			<span>75%</span>
+			<span>100%</span>
+		</div>
+	</div>	
+		
+  </div>
+</div>
+
+
+</div>
+
+<div class="contact section my:10 md:my-20 " id="contact" data-aos="fade-up"  data-aos-duration="1000">
+	<div class="Contact">
+		<div class="md:py-6 md:pt-0 text-xl md:text-4xl font-bold text-gray-400 ">
+			Contact Me 
+			<hr class=" mt-5 md:mt-10">
+		</div>
+	</div>
+	<div class="md:flex justify-between  items-stretch">
+	
+	<div class="social flex justify-center items-center md:w-1/2 p-5  mx-auto" data-aos="fade-up"  data-aos-duration="1000">
+		<div class=" w-full p-5 shadow-bw h-full">
+			<h6>Get in touch with me via social media</h6>
+			
+			<div class="w-full h-full flex flex-col justify-center items-center gap-5 pb-5">
+			
+				<a href="mailto: madhabchandro@gmail.com" class="p-3 w-4/5 shadow-bw rounded-full hover:text-red-700"><i class="fa-brands fa-google"></i> gmail</a> 
+				<a href="https://github.com/MadhabChandra"  target="_blank" class=" p-3 w-4/5 shadow-bw rounded-full hover:text-blue-700"><i class="fa-brands fa-github"></i> gitHub</a>
+				<a href="https://www.linkedin.com/in/madhab-chandro-392a341a6/" target="_blank"  class="p-3 w-4/5 shadow-bw rounded-full hover:text-blue-500"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+				<a href="https://www.upwork.com/freelancers/~01105a047f2bc4442e" target="_blank"  class="p-3 w-4/5 shadow-bw rounded-full hover:text-green-700"><i class="fa-brands fa-upwork"></i> UpWork</a>
+				<a href="https://wa.me/01643650382"  class="p-3 w-4/5 shadow-bw rounded-full hover:text-green-500 " target="_blank" ><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+				
+			</div>
+		
+		</div>
+	
+	</div>
+	<div class="form flex justify-center items-center md:w-1/2 p-5 mx-auto" data-aos="fade-up"  data-aos-duration="1000">
+		
+		<div class=" w-full p-5 shadow-bw h-full">
+		<h6>Send me an email</h6>
+		<form method="post">
+			{% csrf_token %}
+			<div class="p-3">
+				<div class=" p-3 w-full shadow-bw-inset rounded-xl">
+					<input class="w-full bg-cb focus:outline-none" name="name" type="text" placeholder="Name" required>
+				</div>
+			</div>
+			
+			<div class="p-3">
+				<div class=" p-3 w-full shadow-bw-inset rounded-xl">
+					<input class="w-full bg-cb focus:outline-none" name="email" type="email" placeholder="Email" required>
+				</div>
+			</div>
+			
+			<div class="p-3">
+				<div class=" p-3 w-full shadow-bw-inset rounded-lg" >
+					<textarea class="w-full bg-cb focus:outline-none " name="text" placeholder="text" required></textarea>
+				</div>
+			</div>
+			<div class="p-3">
+	
+				<button class="w-full shadow-bw rounded-lg p-3" type="submit" name="Submit" >Submit</button>
+		
+			</div>
+			
+		</form>
+		</div>
+	</div>
+	
+	</div>
+	
+
+	
+</div>	
+	
+</div>
+</div>
+</div>
+
+{% endblock %}
